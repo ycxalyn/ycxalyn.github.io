@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            background-color: gainsboro;
+        }
+        
+        #calendar {
+            width: 700px;
+            margin: 100px auto;
+        }
+        
+        #calendar #y_m {
+            width: 100%;
+            text-align: center;
+        }
+        
+        #calendar #content {
+            width: 100%;
+        }
+        
+        ul {
+            width: 100%;
+            list-style: none;
+        }
+        
+        ul li {
+            width: 100px;
+            height: 50px;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+        }
+        
+        #days li:hover {
+            background-color: gray;
+        }
+        #days li:empty{
+            background-color: gainsboro;
+        }
+    </style>
+</head>
+<body>
+<div id="calendar">
+    <div id="y_m">
+        <select id="year">
+            <option value="1900">1900</option>
+        </select>年
+        <select id="month">
+        
+        </select>月
+    </div>
+    <div id="content">
+        <ul >
+            <li>星期日</li>
+            <li>星期一</li>
+            <li>星期二</li>
+            <li>星期三</li>
+            <li>星期四</li>
+            <li>星期五</li>
+            <li>星期六</li>
+        </ul>
+        <ul id="days">
+        
+        </ul>
+    </div>
+</div>
+<script>
+    var yearEle = document.getElementById("year");
+    var monthEle = document.getElementById("month");
+    var daysEle = document.getElementById("days");
+    
+    //在select中填入年份
+    for (var year = 1900; year < 3000; year++){
+        appendOption(yearEle, year, year);
+    }
+    //在select中填入月份
+    for (var month = 1; month < 13; month++){
+        appendOption(monthEle, month, month);
+    }
+    
+    //初始化显示 当前年和月
+    (function (){
+        var now = new Date();
+        yearEle.value = now.getFullYear();
+        monthEle.value = now.getMonth() + 1;
+        showDays(yearEle.value, monthEle.value)
+    })();
+    
+    //当select的选中的option发送变化的触发的事件
+    yearEle.onchange = function (){
+        showDays(yearEle.value, monthEle.value);
+    }
+    monthEle.onchange = function (){
+        showDays(yearEle.value, monthEle.value);
+    }
+    
+    //展示指定的年和月的所有日期
+    function showDays(year, month){
+        daysEle.innerHTML = "";
+        //得到表示指定年和月的1日的那个时间对象
+        var date = new Date(year, month - 1, 1);
+        //1.先添加响应的空白的li:这个月1号是星期几，就添加几个空白的li
+        var dayOfWeek = date.getDay();//得到1日是星期几
+        for (var i = 0; i < dayOfWeek; i++){
+            appendLi(daysEle, "")
+        }
+        //计算一个月有多少天
+        var daysOfMonth = calDays(year, month);
+        //2. 从1号开始添加li
+        for(var i = 1; i <= daysOfMonth; i++){
+            appendLi(daysEle, i)
+        }
+    }
+    //返回指定的月份的天数  月份1-12
+    function calDays(year, month){
+        return new Date(year,month, 0).getDate();
+    }
+    //创建一个li，并把这个li添加到指定的ul中
+    function appendLi(ul, text){
+        var li = document.createElement("li");
+        li.innerHTML = text;
+        ul.appendChild(li);
+    }
+    //创建一个option并把创建的option的插入到传入的select中
+    function appendOption(select, text, value){
+        var opt = document.createElement("option");
+        opt.innerHTML = text;
+        opt.value = value;
+        select.appendChild(opt);
+    }
+</script>
+</body>
+</html>
