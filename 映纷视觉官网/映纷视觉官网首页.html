@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>映纷视觉官网首页</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+				background-color: #f2f2f2;
+		}
+		.header{
+			width: 100%;
+			height: 100px;
+			position: fixed;
+			margin-top: 0;
+			border:1px solid #b1b1b1;
+			background: rgba(60,60,60,.8) url(img/title2.png) no-repeat 606px 15px;
+			background-size: 136px 44px;
+			z-index: 1;
+		}
+		nav{
+			width: 685px;
+			height: 24px;
+			margin-left: 270px;
+			margin-top: 77px;
+		}
+		nav a{
+			text-decoration: none;
+			margin-left: 122px;
+			font-size: 10px;
+			color:#dcdcdc;
+		}
+		nav a:hover{
+			color:#fff;
+		}
+		.content{
+			position: relative;
+			width: 1011px;
+			top:130px;
+			left: 169px;
+			
+		}
+		.top_u{
+			width: 1009px;
+			position: absolute;
+			border-left: 1px solid #ccc;
+			border-right: 1px solid #ccc;
+		}
+		.top_u img{
+			width: 1009px;
+			height: 533px;
+			display: block;
+		}
+		.top_d{
+			top:533px;
+			width: 100%;
+			position: absolute;
+			height: 35px;
+			background-color: #808080;
+			text-align: center;
+			line-height: 35px;
+			font-size: 16px;
+			color:#fff;
+		}
+		.top_2{
+			width: 100%;
+			top:568px;
+			height: 50px;
+			/*background-color: red;*/
+			position: absolute;
+		}
+		.middle{
+			top:618px;
+			position: absolute;
+			height: 181px;	
+			background-color: #f2f2f2；
+		}
+		.middle_t{	
+			height: 82px;
+			border-top:1px solid #ccc;
+			border-bottom:1px solid #ccc;
+		}
+		.middle_t p{
+			font-size: 14px;
+			line-height: 24px;
+			display: inline-block;
+			margin-top: 15px;
+			text-indent: 29px;
+			color:#666;
+		}
+		.middle_b img{
+			width: 32px;
+			height: 32px;
+			margin-left: 38px;
+			margin-top: 22px;
+			border:0;
+		}
+		.middle_b img:nth-child(14){
+			margin:5px 486px;
+		}
+		.div_1{
+			width: 1011px;
+			height: 209px;
+			top: 844px;
+			margin-bottom: 40px;
+			/*float:left;*/
+			position: relative;
+		}
+		.div_1>div{
+			width: 313px;
+			height: 209px;
+			border-radius: 8px;
+			position: absolute;
+			cursor: pointer;
+		}
+		.div_1 div:nth-child(2){
+			left:349px;
+		}
+		.div_1 div:nth-child(3){
+			left:698px;
+		}
+		.div_1 div img{
+			width: 313px;
+			height: 174px;
+			border-top-right-radius: 8px;
+			border-top-left-radius: 8px;
+			display: block;
+		}
+		.div_1>div>p{
+			height: 35px;
+			text-align: center;
+			line-height: 35px;
+			font-size:16px;
+			border-bottom-right-radius: 8px;
+			border-bottom-left-radius: 8px;
+			display: block;
+			background-color: #fff;
+			color:#666; 
+		}
+		.footer{
+			width: 100%;
+			height: 190px;
+			position: relative;
+			bottom:-995px;
+			background-color: #e0e0e0;
+		}
+		.footer_l{
+			width: 687px;
+			left:0;
+			border-right:1px solid #bcbcbc;
+		}
+		.footer_l,.footer_r{
+			position: absolute;
+			height: 175px;
+			margin-top:8px;
+		}
+		.footer_r{
+			width: 659px;
+			left: 688px;
+			background: url(img/footer_logo.jpg) no-repeat 21px 0px;
+			background-size: 100px 44px;
+		}
+		.footer_l img{
+			width: 20px;
+			height: 19px;
+			top:2px;
+			position: absolute;
+		}
+		.footer_l img:nth-child(1){
+			left:580px;
+		}
+		.footer_l img:nth-child(2){
+			left:610px;
+		}
+		.footer_l img:nth-child(3){
+			left:640px;
+		}
+		.footer p{
+			text-indent: 20px;
+			font-size: 12px;
+			color:#666;
+			margin-bottom: 4px;
+		}
+		.footer p:nth-child(1){
+			margin-top: 58px;
+		}
+		.describe{
+			width: 313px;
+			height: 174px;
+			margin-top: -174px;
+			margin-left: -349px;
+			position: absolute;
+			background: rgba(0,0,0,0.4);
+			display: none;
+			z-index: 0;
+			text-align: center;
+			border-top-right-radius: 8px;
+			border-top-left-radius: 8px;
+		}
+		.describe p:nth-child(1){
+			top: 56px;
+			font-size: 25px;
+			color:#fff;
+			position: relative;
+		}
+		.describe p:nth-child(2){
+			top:60px;
+			font-size: 11px;
+			position: relative;
+			color:#fff;
+		}
+		.div_1>div:hover .describe{
+			display: block;
+			color:#fff;
+		}
+	</style>
+</head>
+<body id="main">
+	<div class="header">
+		<nav>
+			<a href="#main" style="color:#fff;">HOME</a>
+			<a href="#work">WORK</a>
+			<a href="#contact">CONTACT</a>
+			<a href="join us.html">JOIN US</a>
+		</nav>
+	</div>
+	<!-- <div class="wrap"> -->
+		<div class="content">
+			<div class="top">
+				<div class="top_1">
+					<div class="top_u">
+						<img src="img/58fc78b8ba096.jpg" alt="">
+					</div>
+					<div class="top_d">清新绿实验大揭秘H5</div>
+				</div>
+				<div class="top_2">
+					<!-- <ul>
+						<li></li>
+						<li> </li>
+						<li> </li>
+						<li> </li>
+					</ul>
+ -->			</div>
+			</div>
+			<div class="middle">
+				<div class="middle_t"><p>Infini Studio（映纷创意）是一家创意工作室，专注于品质动画影像的创意与设计。我们使用设计、绘画、动画、特效及多种创新形式，以动态视觉语言对品牌与内容进行创意呈现。并由动画导演、设计师、插画师、三维艺术家等共同协作完成。</p></div>
+				<div class="middle_b">
+					<img src="img/1.jpg" alt="">
+					<img src="img/2.jpg" alt="">
+					<img src="img/14.jpg" alt="">
+					<img src="img/3.jpg" alt="">
+					<img src="img/4.jpg" alt="">
+					<img src="img/5.jpg" alt="">
+					<img src="img/6.jpg" alt="">
+					<img src="img/7.jpg" alt="">
+					<img src="img/12.jpg" alt="">
+					<img src="img/13.jpg" alt="">
+					<img src="img/8.jpg" alt="">
+					<img src="img/9.jpg" alt="" id="work">
+					<img src="img/10.jpg" alt="">
+					<img src="img/11.jpg" alt="">
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/594b69293281a.jpg" alt="">
+							<div class="describe">
+								<p>小米MAX2</p>
+								<p>小米max2创意海报</p>
+							</div>
+						</div>
+						<p>小米max2创意海报</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/590aca83b9c1e.jpg" alt="">
+							<div class="describe">
+								<p>阿里巴巴</p>
+								<p>聚星台会员通</p>
+							</div>
+						</div>
+						<p>聚星台会员通</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58f22ebf4ecc7.jpg" alt="">
+							<div class="describe">
+								<p>OPPO</p>
+								<p>R9s清新绿实验大揭秘H5</p>
+							</div>
+						</div>
+						<p>清新绿实验大揭秘H5</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58f0a4b73384a.jpg" alt="">
+							<div class="describe">
+								<p>今日头条</p>
+								<p>今日头条功能片第二弹</p>
+							</div>
+						</div>
+						<p>今日头条功能片第二弹</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58f09de5e6b67.jpg" alt="">
+							<div class="describe">
+								<p>百度</p>
+								<p>百度情人节首页Doodle</p>
+							</div>
+						</div>
+						<p>百度情人节首页Doodle</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be6a566c65e.jpg" alt="">
+							<div class="describe">
+								<p>腾讯</p>
+								<p>微众银行</p>
+							</div>
+						</div>
+						<p>微众银行品牌宣传片</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58be69ba43c21.jpg" alt="">
+							<div class="describe">
+								<p>网易新闻</p>
+								<p>动画短片《旅行者大意了》</p>
+							</div>
+						</div>
+						<p>动画短片《旅行者大意了》</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be68c7e44ff.jpg" alt="">
+							<div class="describe">
+								<p>扇贝</p>
+								<p>扇贝雅思课程</p>
+							</div>
+						</div>
+						<p>扇贝雅思课程</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be681777a97.jpg" alt="">
+							<div class="describe">
+								<p>链家</p>
+								<p>链家大数据</p>
+							</div>
+						</div>
+						<p>链家大数据</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58bf7e8d5e7d0.jpg" alt="">
+							<div class="describe">
+								<p>天猫</p>
+								<p>天猫魔盒3Pro魔力全开</p>
+							</div>
+						</div>
+						<p>天猫魔盒3Pro魔力全开</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be6676a7b8f.jpg" alt="">
+							<div class="describe">
+								<p>今日头条</p>
+								<p>今日头条功能片第一弹</p>
+							</div>
+						</div>
+						<p>今日头条功能片第一弹</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be52069aa59.jpg" alt="">
+							<div class="describe">
+								<p>汇通天下G7</p>
+								<p>汇通天下G7品牌动画</p>
+							</div>
+						</div>
+						<p>汇通天下G7品牌动画</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58be63fe8722e.jpg" alt="">
+							<div class="describe">
+								<p>链家</p>
+								<p>链家App卖房频道2.0</p>
+							</div>
+						</div>
+						<p>链家App卖房频道2.0</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be4fa2c27ad.jpg" alt="">
+							<div class="describe">
+								<p>echo回声</p>
+								<p>echo回声嘉年华音乐节.0</p>
+							</div>
+						</div>
+						<p>echo回声嘉年华音乐节</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58c77e2633f5f.jpg" alt="">
+							<div class="describe">
+								<p>淘宝</p>
+								<p>聚划算：让消费对世界负责.0</p>
+							</div>
+						</div>
+						<p>聚划算：让消费对世界负责</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58fc75d604495.jpg" alt="">
+							<div class="describe">
+								<p>网易游戏</p>
+								<p>网易520游戏礼包H5.0</p>
+							</div>
+						</div>
+						<p>网易520游戏礼包H5</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be4a1353269.jpg" alt="">
+							<div class="describe">
+								<p>腾讯</p>
+								<p>腾讯网络媒体峰会</p>
+							</div>
+						</div>
+						<p>腾讯网络媒体峰会</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be64f0b491c.jpg" alt="">
+							<div class="describe">
+								<p>今日头条</p>
+								<p>未来媒体峰会</p>
+							</div>
+						</div>
+						<p>未来媒体峰会</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58be46ed912f3.jpg" alt="">
+							<div class="describe">
+								<p>有利网</p>
+								<p>“有利网”宣传动画</p>
+							</div>
+						</div>
+						<p>“有利网”宣传动画</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be45218ded1.jpg" alt="">
+							<div class="describe">
+								<p>今日头条</p>
+								<p>今天就看今日头条</p>
+							</div>
+						</div>
+						<p>今天就看今日头条</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be43d6da252.jpg" alt="">
+							<div class="describe">
+								<p>易车影业</p>
+								<p>《易车影业》片头动画</p>
+							</div>
+						</div>
+						<p>《易车影业》片头动画</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58be4279276f1.jpg" alt="">
+							<div class="describe">
+								<p>今日头条</p>
+								<p>为什么我们要回家过年</p>
+							</div>
+						</div>
+						<p>为什么我们要回家过年</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be4012d1607.jpg" alt="">
+							<div class="describe">
+								<p>开窍APP</p>
+								<p>开窍APP创意视频</p>
+							</div>
+						</div>
+						<p>开窍APP创意视频</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be3f4219eb3.jpg" alt="">
+							<div class="describe">
+								<p>完美世界</p>
+								<p>诛仙世界CG动画</p>
+							</div>
+						</div>
+						<p>诛仙世界CG动画</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58be3daba9f0a.jpg" alt="">
+							<div class="describe">
+								<p>F+</p>
+								<p>F+PLUS音乐品牌动画</p>
+							</div>
+						</div>
+						<p>F+PLUS音乐品牌动画</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be3c4a759be.jpg" alt="">
+							<div class="describe">
+								<p>腾讯</p>
+								<p>《拜托了冰箱》</p>
+							</div>
+						</div>
+						<p>《拜托了冰箱》栏目包装</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be3b117d010.jpg" alt="">
+							<div class="describe">
+								<p>今日头条</p>
+								<p>吴亦凡——器官的纷争</p>
+							</div>
+						</div>
+						<p>吴亦凡——器官的纷争</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58be3a30c9be9.jpg" alt="">
+							<div class="describe">
+								<p>飞玄生物</p>
+								<p>癌症大数据</p>
+							</div>
+						</div>
+						<p>癌症大数据</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be3852c7da1.jpg" alt="">
+							<div class="describe">
+								<p>联想政务</p>
+								<p>联想政务新体验</p>
+							</div>
+						</div>
+						<p>联想政务新体验</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58bf7c296aec8.jpg" alt="">
+							<div class="describe">
+								<p>聚划算</p>
+								<p>聚划算《让世界聚在眼前》</p>
+							</div>
+						</div>
+						<p>聚划算《让世界聚在眼前》</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58be361ed84e7.jpg" alt="">
+							<div class="describe">
+								<p>今日头条</p>
+								<p>头条号创作平台</p>
+							</div>
+						</div>
+						<p>头条号创作平台</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be34c01321d.jpg" alt="">
+							<div class="describe">
+								<p>玩闹智造</p>
+								<p>玩闹智造品牌宣传片</p>
+							</div>
+						</div>
+						<p>玩闹智造品牌宣传片</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be33c28aeb0.jpg" alt="">
+							<div class="describe">
+								<p>今日头条</p>
+								<p>今日头条品牌概念动画</p>
+							</div>
+						</div>
+						<p>今日头条品牌概念动画</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58be324772b0c.jpg" alt="">
+							<div class="describe">
+								<p>ME</p>
+								<p>ME——定义我的娱乐圈</p>
+							</div>
+						</div>
+						<p>ME——定义我的娱乐圈</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be306d0a59b.jpg" alt="">
+							<div class="describe">
+								<p>今日头条</p>
+								<p>今日头条动画TVC</p>
+							</div>
+						</div>
+						<p>今日头条动画TVC</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be2f9ae781b.jpg" alt="">
+							<div class="describe">
+								<p>可口可乐</p>
+								<p>“水动乐”水蜜桃</p>
+							</div>
+						</div>
+						<p>可口可乐“水动乐”水蜜桃</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58be2d141db02.jpg" alt="">
+							<div class="describe">
+								<p>酷音乐亚洲盛典</p>
+								<p>酷音乐亚洲盛典</p>
+							</div>
+						</div>
+						<p>酷音乐亚洲盛典</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be2af6c220e.jpg" alt="">
+							<div class="describe">
+								<p>优酷</p>
+								<p>优酷《季录》频道动画</p>
+							</div>
+						</div>
+						<p>优酷《季录》频道动画</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be2915ad98d.jpg" alt="">
+							<div class="describe">
+								<p>去日本</p>
+								<p>日本旅行APP“去日本”</p>
+							</div>
+						</div>
+						<p>日本旅行APP“去日本”</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58be284352339.jpg" alt="">
+							<div class="describe">
+								<p>大众</p>
+								<p>大众甲壳虫</p>
+							</div>
+						</div>
+						<p>甲壳虫爱情观</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be273da84e4.jpg" alt="">
+							<div class="describe">
+								<p>ZAKER</p>
+								<p>ZAKER为品牌服务</p>
+							</div>
+						</div>
+						<p>ZAKER为品牌服务</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be25fa6be66.jpg" alt="">
+							<div class="describe">
+								<p>绿色和平</p>
+								<p>“绿色和平”环保组织招聘</p>
+							</div>
+						</div>
+						<p>“绿色和平”环保组织招聘</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58be245c73c59.jpg" alt="">
+							<div class="describe">
+								<p>民生银行</p>
+								<p>民生银行智富理财</p>
+							</div>
+						</div>
+						<p>民生银行智富理财</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be201d574ae.jpg" alt="">
+							<div class="describe">
+								<p>优酷</p>
+								<p>优酷2014全视频之夜开场</p>
+							</div>
+						</div>
+						<p>优酷2014全视频之夜开场</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58be1da71168a.jpg" alt="">
+							<div class="describe">
+								<p>优酷</p>
+								<p>优酷2014全视频之夜《星图动画》</p>
+							</div>
+						</div>
+						<p>优酷2014全视频之夜《星图动画》</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58bd41bd550de.jpg" alt="">
+							<div class="describe">
+								<p>穿越e族</p>
+								<p>“穿越e族”宣传动画</p>
+							</div>
+						</div>
+						<p>“穿越e族”宣传动画</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58bd3ec299188.jpg" alt="">
+							<div class="describe">
+								<p>vivo</p>
+								<p>vivo X5max</p>
+							</div>
+						</div>
+						<p>K歌之王 实时耳返</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58bd3ae8a1bd3.jpg" alt="">							
+							<div class="describe">
+								<p>聚合数据</p>
+								<p>聚合数据—种类片头广告</p>
+							</div>
+						</div>
+						<p>聚合数据—种类片头广告</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58bd39995fb18.jpg" alt="">
+							<div class="describe">
+								<p>爱奇艺</p>
+								<p>爱奇艺2015营销会</p>
+							</div>
+						</div>
+						<p>爱奇艺2015营销会</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58bd354ecbfd6.jpg" alt="">
+							<div class="describe">
+								<p>华为</p>
+								<p>华为网络大会2014《敏捷的未来》</p>
+							</div>
+						</div>
+						<p>华为网络大会2014《敏捷的未来》</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58bd33dcc978e.jpg" alt="">
+							<div class="describe">
+								<p>UC浏览器</p>
+								<p>UC浏览器发布会概念视频</p>
+							</div>
+						</div>
+						<p>快于一念，因你不凡</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58bd31d8c262b.jpg" alt="">
+							<div class="describe">
+								<p>vivo</p>
+								<p>Vivo Xplay3s手机发布会</p>
+							</div>
+						</div>
+						<p >Vivo Xplay3s手机发布会</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58bd31064ff38.jpg" alt="">
+							<div class="describe">
+								<p>Inifin Studio</p>
+								<p>H7N9禽流感小贴士</p>
+							</div>
+						</div>
+						<p>H7N9禽流感小贴士</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58bd2e4391216.jpg" alt="">
+							<div class="describe">
+								<p>华为</p>
+								<p>华为发布会《改变未来的开始》</p>
+							</div>
+						</div>
+						<p>华为发布会《改变未来的开始》</p>
+					</div>
+				</div>
+				<div class="div_1">
+					<div>
+						<div>
+							<img src="img/58bd24c8d6081.jpg" alt="">
+							<div class="describe">
+								<p>Inifin Studio</p>
+								<p>小星球的圣诞老人纷纷出动</p>
+							</div>
+						</div>
+						<p >小星球的圣诞老人纷纷出动</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58bd1e94cb254.jpg" alt="">
+							<div class="describe">
+								<p>豆瓣</p>
+								<p>在豆瓣，兴趣让用户与品牌不期而遇</p>
+							</div>
+						</div>
+						<p>在豆瓣，兴趣让用户与品牌不期而遇</p>
+					</div>
+					<div>
+						<div>
+							<img src="img/58bd1f0c6c8cf.jpg" alt="">
+							<div class="describe">
+								<p>华为</p>
+								<p>华为发布会为您构筑下一代网络安全</p>
+							</div>
+						</div>
+						<p  id="contact">华为发布会《为您构筑下一代网络安全》</p>
+					</div>
+				</div>
+		    </div>
+	    </div>
+	<!-- </div> -->
+	<div class="footer">
+			<div class="footer_l">
+				<img src="img/contact1.jpg" alt="" class="img_1">
+				<img src="img/contact2.jpg" alt="">
+				<img src="img/contact3.jpg" alt="">
+			</div>
+			<div class="footer_r">
+				<p>Infini studio|映纷创意</p>
+				<p>北京朝阳区常营未来时大厦706</p>
+				<p>TEl&nbsp;:&nbsp;010-85394331</p>
+				<p>QQ&nbsp;:&nbsp;7585917</p>
+				<p>Email&nbsp;:&nbsp;infinistudio@foxmail.com</p>
+				<p>web&nbsp;:&nbsp;@InfiniStudio</p>
+			</div>
+	</div>
+</body>
+</html>
