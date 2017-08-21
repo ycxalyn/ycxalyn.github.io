@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>躁动的小球</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #000;
+        }
+        div{
+            position:absolute;
+            border-radius:50%;
+        }
+    </style>
+</head>
+<body>
+<script>
+    function Ball(opt){
+        this._init(opt);
+    }
+    Ball.prototype={
+        _init : function(opt){
+            this.parentNode=opt.parentNode;
+            this.div=document.createElement("div");
+            this.r=randomInt(10,100);
+            this.x=randomInt(0,1200);
+            this.y=randomInt(0,600);
+            this.color=`rgba(${randomInt(0,255)},${randomInt(0,255)},${randomInt(0,255)},${Math.random()*0.6+0.4})`;
+            this.speedX=randomInt(-20,20);
+            this.speedY=randomInt(-20,20);
+        },
+        show : function(){
+            var div=this.div;
+            var style=div.style;
+            style.width=this.r*2+"px";
+            style.height=this.r*2+"px";
+            style.backgroundColor=this.color;
+            style.left=this.x+"px";
+            style.top=this.y+'px';
+            this.parentNode.appendChild(div);
+        },
+        move : function(){
+            var div=this.div;
+            var dirX=1;
+            var dirY=1;
+            var speedX=this.speedX;
+            var speedY=this.speedY;
+            var maxLeft=this.parentNode.offsetWidth-div.offsetWidth;
+            var maxTop=this.parentNode.offsetHeight-div.offsetHeight;
+            setTimeout(function step(){
+                var left=div.offsetLeft+speedX*dirX;
+                var top=div.offsetTop+speedY*dirY;
+                if(left<=0){
+                    left=0;
+                    speedX*=-1;
+                }
+                if(top<=0){
+                    top=0;
+                    speedY*=-1;
+                }
+                if(left>=maxLeft){
+                    left=maxLeft;
+                    speedX*=-1;
+                }
+                if(top>=maxTop){
+                    top=maxTop;
+                    speedY*=-1;
+                }
+                div.style.left=left+"px";
+                div.style.top=top+"px";
+                setTimeout(step,40);
+            },40);
+        }
+    };
+    for(var i=0;i<50;i++){
+        var ball=new Ball({
+            parentNode : document.body
+        });
+        ball.show();
+        ball.move();
+    }
+    function randomInt(from,to){
+        return parseInt(Math.random()*(to-from+1)+from);
+    }
+</script>
+</body>
+</html>
