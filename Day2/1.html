@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #wrap{
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin: 150px auto;
+            transform: rotateX(30deg) rotateY(30deg);
+            transform-style: preserve-3d;
+            animation: 10s linear 0s infinite reverse my_rotate;
+        }
+        #wrap>div{
+            width: 400px;
+            height: 400px;
+            position: absolute;
+        }
+        .top{
+            transform: translateZ(150px);
+            background:url("1.jpg") no-repeat;
+        }
+        .down{
+            transform: translateZ(-150px);
+            background-size: cover;
+            background:url("2.jpg") no-repeat;
+        }
+        .left{
+            background:url("3.jpg") no-repeat;
+            background-size: cover;
+            transform:rotateY(90deg) translateZ(150px);
+        }
+        .right{
+            background:url("6.jpg") no-repeat;
+            background-size: cover;
+            transform:rotateY(90deg) translateZ(-150px);
+        }
+        .front{
+            background:url("4.jpg") no-repeat;
+            background-size: cover;
+            transform:rotateX(90deg) translateZ(150px);
+        }
+        .back{
+            background:url("4.jpg") no-repeat;
+            background-size: cover;
+            transform:rotateX(90deg) translateZ(-150px);
+        }
+        @keyframes my_rotate {
+        from{
+        transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+        }
+        to{
+        transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg);
+        }
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div class="top"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="front"></div>
+    <div class="back"></div>
+    <div class="down"></div>
+</div>
+</body>
+</html>
