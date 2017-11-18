@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>刮刮乐</title>
+    <style>
+        #myCanvas{
+            border: 1px solid #000;
+            border-radius: 10px;
+            background: url("01.jpg");
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="210" height="285"></canvas>
+<script>
+    let canvas=document.querySelector("#myCanvas");
+    let ctx=canvas.getContext("2d");
+    
+    let picObj=new Image();
+    picObj.src='02.jpg';
+    picObj.onload=function(){
+        ctx.drawImage(this,0,0);
+    };
+    canvas.onmousemove=function(){
+        let x=event.pageX-canvas.offsetLeft;
+        let y=event.pageY-canvas.offsetTop;
+        ctx.globalCompositeOperation='destination-out';
+        ctx.beginPath();
+        ctx.arc(x,y,20,0,Math.PI*2,true);
+        ctx.fillStyle='red';
+        ctx.fill();
+//        ctx.strokeStyle='red';
+        ctx.closePath();
+    }
+</script>
+</body>
+</html>
