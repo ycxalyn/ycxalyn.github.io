@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>躁动的小球</title>
+    <style>
+        #myCanvas{
+            border: 1px solid #000;
+            position: absolute;
+            left: calc(50% - 300px);
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas" width="600" height="400"></canvas>
+<script>
+    let myCanvas=document.querySelector("#myCanvas");
+    let ctx=myCanvas.getContext("2d");
+    function Circle(x,y,r,color,speedX,speedY){
+        this.x=x;
+        this.y=y;
+        this.r=r;
+        this.color=color;
+        this.speedX=speedX;
+        this.speedY=speedY;
+        this.drawCircle=function(){
+            ctx.beginPath();
+            ctx.fillStyle = this.color;
+            ctx.arc(this.x,this.y,this.r,0,Math.PI*2,true);
+            ctx.fill();
+        };
+        this.move=function(){
+            if(this.x>myCanvas.width-2*this.r||this.x-this.r<0){
+                this.speedX *= -1;
+            }else if(this.y>myCanvas.height-2*this.r||this.y-this.r<0){
+                this.speedY *= -1;
+            }
+            this.x += this.speedX;
+            this.y += this.speedY;
+        }
+    }
+    let arr = [];
+    for(let i=0;i<200;i++){
+        let x = randomInt(37,540);
+        let y = randomInt(37,340);
+        let r = randomInt(10,22);
+        let speedX = randomInt(-7,7);
+        let speedY = randomInt(-8,8);
+        let color=`rgba(${randomInt(0,255)},${randomInt(0,255)},${randomInt(0,255)},${Math.random(0,1)}`;
+        let circle = new Circle(x,y,r,color,speedX,speedY);
+        arr.push(circle);
+    }
+    function circles(){
+        ctx.clearRect(0,0,myCanvas.width,myCanvas.height);
+        for(let i=0;i<arr.length;i++){
+            arr[i].drawCircle();
+            arr[i].move();
+        }
+        window.requestAnimationFrame(circles);
+    }
+    circles();
+    function randomInt(from,to){
+        return parseInt(Math.random()*(to-from+1)+from);
+    }
+</script>
+</body>
+</html>
