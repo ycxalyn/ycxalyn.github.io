@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>房产证</title>
+    <style>
+        #myCanvas{
+            border: 1px solid #676767;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas" width="350" height="412"></canvas>
+<button>生成</button>
+<input type="text">
+<script>
+    let canvas=document.querySelector("#myCanvas");
+    let btn=document.querySelector("button");
+    let text=document.querySelector("input");
+    let ctx=canvas.getContext("2d");
+    let houseObj=new Image();
+    houseObj.src='1.jpg';
+    houseObj.onload = function () {
+        btn.onclick=function() {
+            ctx.drawImage(houseObj, 0, 0);
+            ctx.font = '12px 黑体';
+            ctx.fillStyle = "#888888";
+            ctx.fillText(text.value, 140, 120);
+        }
+    }
+</script>
+</body>
+</html>
