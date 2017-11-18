@@ -1,0 +1,350 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body,#loading_wrap,#wrap,#wrap>.p1,.p2,.game,.p3{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+#loading_wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 1);
+}
+.loading{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    left: calc((100% - 100px)/2);
+    top:  calc((100% - 100px)/2);
+    border-radius: 50%;
+    font-size: 30px;
+    text-align: center;
+    line-height: 100px;
+    color:#fff;
+    background-color: #f56471;
+    transform-style: preserve-3d;
+    animation:my_rotate 3s infinite;
+}
+@keyframes my_rotate {
+    from{
+        transform:rotateY(0deg);
+    }
+    from{
+        transform:rotateY(360deg);
+    }
+}
+#wrap>.p1{
+    background: url("../img/bg.jpg");
+    background-size: 100% 100%;
+}
+.challenge,.win,.start,.hand,.p1_btns,.ranking,.activity,.prize,.use{
+    position: absolute;
+}
+.challenge{
+    left: 20.9375%;
+    top: 12.5%;
+    width: 70.46875%;
+    animation-delay: .8s;
+}
+.win{
+    left: 2%;
+    top: 25.70422%;
+    width: 96%;
+}
+.start{
+    left: 30.46875%;
+    bottom: 21.56690%;
+    width: 34.84375%;
+}
+.hand{
+    left: 58.28125%;
+    bottom: 24.207%;
+    width: 13.75%;
+    animation-direction: alternate;
+}
+.p1_btns{
+    left: 4.6875%;
+    bottom: 2.8415%;
+    width: 90%;
+}
+.ranking{
+    left: 7.18%;
+    bottom: 4.866%;
+    width: 20%;
+}
+.activity{
+    left: 28.59%;
+    bottom: 4.778%;
+    width: 20.3125%;
+}
+.prize{
+    left: 50.46875%;
+    bottom: 4.778%;
+    width: 20.3125%;
+}
+.use{
+    left: 72.5%;
+    bottom: 4.778%;
+    width: 20.625%;
+}
+.p1_mask,.p1_mask>img,.p1_mask>form,.p1_mask>form>.name,.phone,.btn{
+    position: absolute;
+}
+.p1_mask{
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 2;
+    display: none;
+}
+.p1_mask>img{
+    right: 13.59375%;
+    top: 13.845%;
+    width: 6.6875%;
+}
+.p1_mask>form{
+    top: 19.63%;
+    left: 13%;
+    width: 74%;
+    height: 44%;
+    background: url(../img/p1_from.png);
+    background-size: 100% 100%;
+}
+.p1_mask>form>.name,.p1_mask>form>.phone{
+    left: 12.711%;
+    width: 72%;
+    height: 14%;
+    border: 2px solid #e33145;
+    border-radius: 10px;
+    padding-left: 2%;
+    font-size: 16px;
+    color: black;
+    background: #f2bb00;
+}
+.p1_mask>form>.name{
+    top: 33.5%;
+}
+.p1_mask>form>.phone{
+    top: 50.5%;
+}
+.p1_mask>form>.btn{
+    top: 69%;
+    width: 54.85%;
+    height: 17.2%;
+    border: 0;
+    background: url(../img/p1_sub.png);
+    background-size: 100% 100%;
+    left: 23.5%;
+}
+.ranking_list{
+    position: absolute;
+    top: 19.63%;
+    left: 13.28125%;
+    width: 57.99375%;
+    height: 40.387%;
+    background: url(../img/ranking_bg.png);
+    background-size: 100% 100%;
+    padding: 14.8% 7.8% 8.688%;
+}
+.ranking_list>ul{
+    height: 100%;
+    overflow: scroll;
+}
+.ranking_list>ul>li{
+    border-bottom: 1px dashed #999;
+    padding-bottom: 8px;
+    padding-top: 16px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: content-box;
+}
+.ranking_list>ul>li>span{
+    vertical-align: top;
+    line-height: 44px;
+}
+.rank{
+    width: 21px;
+    height: 44px;
+    text-align: center;
+    font-size: 14px;
+    display: inline-block;
+}
+.ranking_list>ul>li:nth-child(1)>.rank{
+    background:url("../img/p1_first.png") center center no-repeat;
+    background-size: 80%;
+}
+.ranking_list>ul>li:nth-child(2)>.rank{
+    background:url("../img/p1_second.png") center center no-repeat;
+    background-size: 80%;
+}
+.ranking_list>ul>li:nth-child(3)>.rank{
+    background:url("../img/p1_third.png") center center no-repeat;
+    background-size: 80%;
+}
+.title{
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+}
+.point{
+    float: right;
+}
+.float_wrap{
+    position: absolute;
+    left: 13.59375%;
+    top: 19.71%;
+    width: 65.4375%;
+    border: 2px solid #e33145;
+    border-radius: 10px;
+    background: #ffead1;
+    padding: 15px;
+    max-height: 60%;
+    overflow: scroll;
+}
+.float_wrap>h2{
+    text-align: center;
+    padding: 10px 0;
+}
+.float_wrap>p{
+    font-size: 14px;
+    margin: 20px 0;
+}
+.p2{
+    top: 0;
+    left: 0;
+    background: url(../img/bg2.png);
+    background-size: 100% 100%;
+}
+.p2>.game>.text,.p2>.game>.txt,.timeDown,.p2_hand,.bottom{
+    position: absolute;
+}
+.p2>.game>.text{
+    top:12.676%;
+    left: 8%;
+    width: 84%;
+    overflow: hidden;
+}
+.p2>.game>.txt{
+    left: 15%;
+    top: 15.052%;
+    width: 70%;
+}
+.timeDown{
+    top:32.83%;
+    width: 100%;
+    text-align: center;
+}
+.timeDown>.time_num{
+    display: inline-block;
+    width: 10.9375%;
+    font-size: 20px;
+    color: white;
+    background: url(../img/p2_scoring.png);
+    background-size: 100% 100%;
+    padding: 20px 0;
+}
+.timeDown>.clock{
+    display: inline-block;
+    font-size: 22px;
+    color: #bf986b;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    margin-left: 5px;
+    background: url(../img/shizhong.png);
+    background-size: 100% 100%;
+}
+
+.money_wrap{
+    position: absolute;
+    left: 20.625%;
+    top: 54.419%;
+    width: 59.375%;
+}
+.money_wrap>img{
+    position: absolute;
+    width: 100%;
+}
+.p2_hand{
+    right: 2%;
+    bottom: 20%;
+    width: 35.2%;
+}
+.bottom{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.img_animate{
+    animation: img_move 0.9s linear;
+}
+@keyframes img_move {
+    from {
+        transform: translateY(0) scale(1);
+    }
+    to {
+        transform: translateY(-550px) scale(0);
+    }
+}
+.p3{
+    background: url(../img/p3_bg.jpg);
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+.p3_acquire{
+    position: absolute;
+    top: 13.38%;
+    left: 16.1%;
+    width: 69.68%;
+}
+.result_num{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    position: absolute;
+    width: 100%;
+    top: 23%;
+}
+.result_txt{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    top: 35%;
+    font-size: 14px;
+    color: #fff;
+}
+.result_rank{
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    padding: 3% 0;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    top: 40%;
+    font-size: 14px;
+    color: #d21026;
+}
+.again_btn,.share_btn{
+    position: absolute;
+    bottom: 27.11%;
+    width: 27.8%;
+}
+.again_btn {
+    left: 15.9%;
+}
+.share_btn{
+    right:15.9%;
+}
+.p1_mask>.p3_share{
+    position: absolute;
+    width: 50%;
+    top: 5%;
+    right: 5%;
+}

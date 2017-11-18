@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数钱游戏</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/Hammer.min.js"></script>
+</head>
+<body>
+<div id="loading_wrap" style="display: none">
+    <div class="loading">0%</div>
+</div>
+<div id="wrap">
+    <div class="p1">
+        <div id="index">
+            <img src="img/tiaozhan.png" alt="" class="challenge animated bounceIn">
+            <img src="img/yinqu.png" alt="" class="win animated swing">
+            <img src="img/start_game.png" alt="" class="start animated pulse infinite">
+            <img src="img/shou.png" alt="" class="hand animated fadeOut infinite">
+            <img src="img/p1_btns_wrap.png" alt="" class="p1_btns">
+            <img src="img/ranking.png" alt="" class="ranking">
+            <img src="img/activity_rule.png" alt="" class="activity">
+            <img src="img/prize.png" alt="" class="prize">
+            <img src="img/shiyong.png" alt="" class="use">
+        </div>
+        <div class="p1_mask">
+            <img src="img/close.png" alt="" class="close">
+            <form action="">
+                <input type="text" placeholder="姓名" class="name" >
+                <input type="tel" placeholder="电话" class="phone" >
+                <input type="button" value="&nbsp;" class="btn" >
+            </form>
+        </div>
+    </div>
+    <div class="p1_mask" id="ranking">
+        <img src="img/close.png" alt="" class="close">
+        <div class="ranking_list">
+            <ul>
+                <li>
+                    <span class="rank"></span>
+                    <img src="img/shizhong.png" alt="" class="title">
+                    <span class="name">张飞</span>
+                    <span class="point">1500</span>
+                </li>
+                <li>
+                    <span class="rank"></span>
+                    <img src="img/shizhong.png" alt="" class="title">
+                    <span class="name">关羽</span>
+                    <span class="point">1400</span>
+                </li>
+                <li>
+                    <span class="rank"></span>
+                    <img src="img/shizhong.png" alt="" class="title">
+                    <span class="name">刘备</span>
+                    <span class="point">1300</span>
+                </li>
+                <li>
+                    <span class="rank">4</span>
+                    <img src="img/shizhong.png" alt="" class="title">
+                    <span class="name">赵云</span>
+                    <span class="point">1000</span>
+                </li>
+                <li>
+                    <span class="rank">5</span>
+                    <img src="img/shizhong.png" alt="" class="title">
+                    <span class="name">黄忠</span>
+                    <span class="point">800</span>
+                </li>
+                <li>
+                    <span class="rank">6</span>
+                    <img src="img/shizhong.png" alt="" class="title">
+                    <span class="name">曹操</span>
+                    <span class="point">600</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="p1_mask" id="rules">
+        <img src="img/close.png" alt="" class="close">
+        <div class="float_wrap">
+            <h2>活动规则</h2>
+            <p>
+                1、每人有多次游戏机会，但成绩只能提交一次，且提交之后不能更改！<br>
+                2、提交成绩时要提供姓名及手机号码作为兑奖凭证，因用户本人未在规定时间内提供正确的手机号码造成的奖品损失，由用户个人承担。<br>
+                3、活动时间为2016年5月11日-5月19日24:00，活动结束后将在“雾灵山庄”微信公布中奖名单。<br>
+                4、获奖规则：系统将根据大家提交的成绩，按照由多到少的规则进行排行，排名第1的网友将获得一等奖，排名第2-第21位的网友将分获二等奖，以此类推。<br>
+                5、奖品的发放：活动结束后，将由工作人员与您取得联系，并将相应的卡券编号发送到您提供的手机号码上。
+            </p>
+        </div>
+    </div>
+    <div class="p1_mask" id="prize">
+        <img src="img/close.png" alt="" class="close">
+        <div class="float_wrap">
+            <h2>活动奖品</h2>
+            <p>一等奖1人：价值1488元7号楼1晚豪华标间免费房券1张，并可享康体项目3折优惠;</p>
+            <p>二等奖20人：100元订房代金券每人1张，并可享康体项目4折优惠；</p>
+            <p>三等奖50人：50元订房代金券每人1张，并可享康体项目5折优惠。</p>
+            <p>奖品的有效期：2016年5月20日至6月15日（周五、周六及法定节假日不可用）</p>
+        </div>
+    </div>
+    <div class="p1_mask" id="uses">
+        <img src="img/close.png" alt="" class="close">
+        <div class="float_wrap">
+            <h2>奖券使用说明</h2>
+            <p>
+                1、奖品的使用：请务必至少提前一周致电010-81027788或81027799进行预约，并于入住时向前台服务人员出示您手机上收到的卡券编号即可使用（需同时验证获奖人姓名与手机号码）。<br>
+                2、代金券仅适用于线下门市价入住客房消费使用，不适用于通过携程或微信等其他线上渠道预定使用。<br>
+                3、免费房安排的房间将视当时酒店排房情况而定，如您所预约的时段预订已满，将与您协商调整入住时间。<br>
+                4、免费房券及代金券不得用于除订房外其他产品消费，不得与酒店其他优惠折扣或礼券同时使用，且不予退换、兑换现金或找赎。<br>
+                5、对于恶意刷奖者和作弊者，主办方有权取消其兑奖资格。
+            </p>
+        </div>
+    </div>
+    <div class="p2" style="display: none;">
+        <div class="game">
+            <img src="img/p2_kuang.png" alt="" class="text">
+            <img src="img/p2_txt1.png" alt="" class="txt">
+            <div class="timeDown">
+                <span class="time_num">0</span>
+                <span class="time_num">0</span>
+                <span class="time_num">0</span>
+                <span class="clock">60</span>
+            </div>
+            <div class="money_wrap">
+                <img src="img/p2_qian.jpg" alt="">
+            </div>
+            <img src="img/p2_zhuan.png" alt="" class="bottom">
+            <img src="img/p2_shou.png" alt="" class="p2_hand fadeOutUp animated infinite">
+        </div>
+    </div>
+    <div class="p3" style="display:none;">
+        <div id="result">
+            <img src="img/p3_acquire.png" alt="" class="p3_acquire">
+            <div class="result_num"></div>
+            <div class="result_txt">你太客气了，这不是你的挑战极限吧</div>
+            <div class="result_rank">我的辉煌战绩:￥
+                <span id="score">997</span>
+                当前排名：
+                <span id="result_rank">33</span>
+            </div>
+            <img src="img/p3_again.png" alt="" class="again_btn animated pulse infinite">
+            <img src="img/p3_share_btn.png" alt="" class="share_btn animated pulse infinite">
+            <img src="img/p1_btns_wrap.png" alt="" class="p1_btns">
+            <img src="img/ranking.png" alt="" class="ranking">
+            <img src="img/activity_rule.png" alt="" class="activity">
+            <img src="img/prize.png" alt="" class="prize">
+            <img src="img/shiyong.png" alt="" class="use">
+            <div class="p1_mask" id="share">
+                <img class="p3_share" src="img/p3_share.png">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
