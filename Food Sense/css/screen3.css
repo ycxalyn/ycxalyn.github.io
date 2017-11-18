@@ -1,0 +1,47 @@
+body{
+    width: 896px;
+    padding: 50px 48px 0;
+}
+.content{
+    width: 712px;
+    float: right;
+}
+#featured{
+    height: 510px;
+}
+.slides {
+    width: 712px;
+}
+.slides>div{
+    height: 445px;
+}
+.slides img {
+    height: 445px;
+}
+.nav{
+    height: 35px;
+}
+.nav li{
+    width: 178px;
+    height: 35px;
+}
+.nav>ul>li>a{
+    width: 178px;
+    height: 25px;
+    padding: 8px 0 2px 0;
+}
+.nav li>a>h3{
+    text-align: center;
+}
+.nav li>a>p{
+    display: none;
+}
+#newsletter>form>input:nth-child(1){
+    width: 152px;
+}
+#recent>div{
+    width: 160px;
+}
+#recent>div>a>img {
+    width: 139px;
+}
